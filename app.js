@@ -15,12 +15,10 @@ const item = [
   ];
   
 
-
+// +++++++++++++++++ Default condition on Loading +++++++++++++++===
 
   const obj=item.map((item)=>{
     return `
-
-  
     <div class="menu-item col-12 col-md-4  col-lg-3">
     <div class="card mb-3 mx-0">
       <img src="${item.img}" class="card-img-top" alt="${item.title}">
@@ -37,12 +35,13 @@ const item = [
   })
   document.getElementById('row1').innerHTML=(obj);
 
+  //  +++++++++++++++++++ First filter and then render on the page ++++++++++===
   let starters=()=>{
     let mainsItem=item.filter((item)=>{
       return item.category=="starters";
     });
 
-      
+  // +++++++++++++++++++++++ render condition +++++++++++++++++===
     let obj=mainsItem.map((item)=>{
       return `
   
@@ -170,14 +169,16 @@ const item = [
   }
   
 
+// +++++++++++++++++++  Searching Impilimentation  ++++++++++++
   
   let search=()=>{
     let value=document.getElementById('searchBOx').value;
 
-
     let mainsItem=item.filter((item)=>{
        let nameItem =item.title;
        for(let i=0;i<nameItem.length;i++){
+
+      // ================== Convert input and item.filter in to LowerCase ===========
          
           if(nameItem[i].toLocaleLowerCase()==value.toLowerCase()){
             return item;
@@ -186,10 +187,10 @@ const item = [
     });
 
 
+     // +++++++++++++++++++++++ render condition +++++++++++++++++===
+
     let obj=mainsItem.map((item)=>{
       return `
-  
-    
       <div class="menu-item col-12 col-md-4  col-lg-3">
       <div class="card mb-3 mx-0">
         <img src="${item.img}" class="card-img-top" alt="${item.title}">
@@ -204,6 +205,9 @@ const item = [
   
     `
     })
+
+
+  //  ++++++++++++++++++++ change inner Html to the object+++++++++++++++++++
     document.getElementById('row1').innerHTML=(obj);
  
   }
