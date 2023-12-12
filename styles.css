@@ -1,0 +1,23 @@
+@media (min-width: 576px) {
+   
+}
+
+@media (min-width: 992px) {
+    
+}
+
+
+.card-img-top{
+    height: 300px ;
+    transition: all 1s;
+}
+
+.card-title{
+    color: rgb(42, 207, 225);
+    transition: all 1s;
+}
+
+.card:hover{
+   scale:1.05;
+   transition: all 1s;
+}
